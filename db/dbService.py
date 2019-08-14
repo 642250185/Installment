@@ -147,9 +147,9 @@ class DBConnect(object):
         return list_products
 
 
-    def get_alloptions(self):
+    def get_alloptions(self, channel):
 
-        SQL = "select * from t_bi_options"
+        SQL = "select * from t_bi_options where channel = {}".format(channel)
         self.cursor.execute(SQL)
         results = self.cursor.fetchall()
         list_options = []
@@ -164,6 +164,63 @@ class DBConnect(object):
                 "answer_name": row[6],
                 "create_date": row[7],
                 "update_date": row[8]
+            }
+            list_options.append(dict_options)
+
+        return list_options
+
+
+    def get_allspu_alloption(self, category_id, channel):
+
+        SQL = "select b.channel, b.category_id, b.brand_id, b.brand_name, p.product_id, p.product_name, o.querstion_id, o.querstion_name, o.answer_id, o.answer_name " \
+              "from t_bi_options o, t_bi_products p, t_bi_brands b " \
+              "where o.product_id = p.product_id " \
+              "and p.brand_id = b.brand_id " \
+              "and b.category_id = {} and p.channel = {} and o.channel = {}".format(category_id, channel, channel)
+
+        self.cursor.execute(SQL)
+        results = self.cursor.fetchall()
+        list_options = []
+        for row in results:
+            dict_options = {
+                "channel": row[0],
+                "category_id": row[1],
+                "brand_id": row[2],
+                "brand_name": row[3],
+                "product_id": row[4],
+                "product_name": row[5],
+                "querstion_id": row[6],
+                "querstion_name": row[7],
+                "answer_id": row[8],
+                "answer_name": row[9]
+            }
+            list_options.append(dict_options)
+
+        return list_options
+
+    def get_link_options_pid(self, category_id, product_id, channel):
+
+        SQL = "select b.channel, b.category_id, b.brand_id, b.brand_name, p.product_id, p.product_name, o.querstion_id, o.querstion_name, o.answer_id, o.answer_name " \
+              "from t_bi_options o, t_bi_products p, t_bi_brands b " \
+              "where o.product_id = p.product_id " \
+              "and p.brand_id = b.brand_id " \
+              "and b.category_id = {} and p.channel = {} and o.channel = {} and o.product_id = {}".format(category_id, channel, channel, product_id)
+
+        self.cursor.execute(SQL)
+        results = self.cursor.fetchall()
+        list_options = []
+        for row in results:
+            dict_options = {
+                "channel": row[0],
+                "category_id": row[1],
+                "brand_id": row[2],
+                "brand_name": row[3],
+                "product_id": row[4],
+                "product_name": row[5],
+                "querstion_id": row[6],
+                "querstion_name": row[7],
+                "answer_id": row[8],
+                "answer_name": row[9]
             }
             list_options.append(dict_options)
 
