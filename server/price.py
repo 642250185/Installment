@@ -48,7 +48,6 @@ class Price(Base):
 
                 # 获取机型
                 list_link_option = self.db.get_link_options_pid(1, product_id, 1)
-                print('list_link_option: ', list_link_option)
 
                 str_options = ""
                 for s_id in ppvIds:
@@ -61,15 +60,10 @@ class Price(Base):
                         pass
                     pass
 
-                print('str_options : ', str_options)
-
                 price = data['price']
-                print('询价成功[√] >> price: %s' % price)
-
-                pass
+                print('询价成功[√] >> price: %s' % price, str_options)
             else:
                 print('询价失败[X] >>  code: %s, message: %s' % (code, resultMessage))
-                pass
             pass
         except BaseException as e:
             print('询价异常 >> e : ', e)
@@ -81,34 +75,8 @@ class Price(Base):
         product_id = 25827
         ppvIds = [2014,3987,2072,2453,6437,2026,2067,2100,2114,2118,2124,2045,2104,2106,2108,2129,2134,2808,3168,5300,6947,6950,6982]
 
-        self.__get_quote_id(product_id, ppvIds)
-
+        for i in range(100):
+            self.__get_quote_id(product_id, ppvIds)
 
         pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
