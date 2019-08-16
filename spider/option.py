@@ -16,7 +16,7 @@ class Option(Base):
                 a_name = answer['name']
 
                 dict_option = {
-                    "channel": 1,
+                    "channel": self.channel,
                     "product_id": product_id,
                     "querstion_id": q_id,
                     "querstion_name": q_name,
@@ -61,7 +61,7 @@ class Option(Base):
         try:
 
             # 判断该机型是否入options库
-            options = self.db.get_optionbypid(1, product_id)
+            options = self.db.get_optionbypid(self.channel, product_id)
             if len(options) > 0:
                 # TODO 执行检测逻辑，更新问题项
                 print('%s, 该机型详情已经入库, 无需再次发起请求。' % product_id)
@@ -92,7 +92,7 @@ class Option(Base):
 
                     # 查询参数
                     dict_params_SQL = {
-                        "channel" : 1,
+                        "channel" : self.channel,
                         "product_id": product_id,
                         "querstion_id": _querstion_id,
                         "answer_id": _answer_id
@@ -119,11 +119,10 @@ class Option(Base):
 
     def all_spu_options(self):
 
-        all_products = self.db.get_allproducts(1)
+        all_products = self.db.get_allproducts(self.channel)
         print('SPU_Len: ', len(all_products))
 
         for product in all_products:
-
             self.__get_option(product)
             pass
         pass

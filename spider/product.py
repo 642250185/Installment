@@ -57,14 +57,14 @@ class Product(Base):
                     product_name = dict_item['name']
 
                     dict_product = {
-                        "channel" : 1,
+                        "channel" : self.channel,
                         "brand_id" : brand_id,
                         "product_id" : product_id,
                         "product_name" : product_name
                     }
 
                     # 检测是否存在
-                    is_product = self.db.get_productbypid(1, product_id)
+                    is_product = self.db.get_productbypid(self.channel, product_id)
                     if len(is_product) > 0:
                         print('已存在 >> %s, %s, %s' % (brand_id, product_id, product_name))
                         continue
@@ -85,7 +85,7 @@ class Product(Base):
     def all_product(self):
 
         # 获取所有的品牌
-        list_brands = self.db.get_allbrands(1, 1)
+        list_brands = self.db.get_allbrands(self.channel, self.category_id)
 
         print('brand_Len: ', len(list_brands))
 
@@ -93,7 +93,6 @@ class Product(Base):
 
             self.__get_product(dict_brand)
 
-            # break
             pass
         pass
 

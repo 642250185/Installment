@@ -17,3 +17,6 @@ class Base:
         self.cfg = cfg
         self.share = share
 
+        self.channel = cfg.get_cfg_value("COMMAND", "channel")
+        self.category_id = cfg.get_cfg_value("COMMAND", "category_id")
+

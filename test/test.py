@@ -3,9 +3,17 @@ from spider import product
 from spider import option
 from spider import export
 from server import price
+from spider import access_token
 
-# class_brand = brand.Brands()
-# class_brand.get_brands()
+
+# cls_token = access_token.Token()
+# dict_token = cls_token._get_token()
+# print(dict_token)
+
+
+
+class_brand = brand.Brands()
+class_brand.get_brands()
 
 
 # class_product = product.Product()
@@ -20,5 +28,5 @@ from server import price
 # class_export._export()
 
 
-class_price = price.Price()
-class_price.get_all_price()
+# class_price = price.Price()
+# class_price.get_all_price()
