@@ -1,6 +1,7 @@
 import json
 import requests
 from spider.base import Base
+from spider import access_token
 
 class Product(Base):
 
@@ -8,6 +9,12 @@ class Product(Base):
 
         category_id = dict_brand['category_id']
         brand_id = dict_brand['brand_id']
+
+        # 初始化token
+        cls_token = access_token.AccessToken()
+        dict_access_token = cls_token._get_token()
+
+        token = dict_access_token['token']
 
         # 获取路由
         domain = self.cfg.get_cfg_value("ROUTE", "domain")
@@ -32,7 +39,7 @@ class Product(Base):
             "Content-Length": self.cfg.get_cfg_value("HEADERS", "Content-Length"),
             "Origin": self.cfg.get_cfg_value("HEADERS", "Origin"),
             "Cookie": self.cfg.get_cfg_value("HEADERS", "Cookie"),
-            "Authorization": self.cfg.get_cfg_value("HEADERS", "Authorization"),
+            "Authorization": "bearer " + token
         }
 
         # 请求体
@@ -95,7 +102,4 @@ class Product(Base):
 
             pass
         pass
-
-
-
 

@@ -172,7 +172,7 @@ class DBConnect(object):
 
     def get_allspu_alloption(self, category_id, channel):
 
-        SQL = "select b.channel, b.category_id, b.brand_id, b.brand_name, p.product_id, p.product_name, o.querstion_id, o.querstion_name, o.answer_id, o.answer_name " \
+        SQL = "select b.channel, o.flag, b.category_id, b.brand_id, b.brand_name, p.product_id, p.product_name, o.querstion_id, o.querstion_name, o.answer_id, o.answer_name " \
               "from t_bi_options o, t_bi_products p, t_bi_brands b " \
               "where o.product_id = p.product_id " \
               "and p.brand_id = b.brand_id " \
@@ -184,15 +184,16 @@ class DBConnect(object):
         for row in results:
             dict_options = {
                 "channel": row[0],
-                "category_id": row[1],
-                "brand_id": row[2],
-                "brand_name": row[3],
-                "product_id": row[4],
-                "product_name": row[5],
-                "querstion_id": row[6],
-                "querstion_name": row[7],
-                "answer_id": row[8],
-                "answer_name": row[9]
+                "flag": row[1],
+                "category_id": row[2],
+                "brand_id": row[3],
+                "brand_name": row[4],
+                "product_id": row[5],
+                "product_name": row[6],
+                "querstion_id": row[7],
+                "querstion_name": row[8],
+                "answer_id": row[9],
+                "answer_name": row[10]
             }
             list_options.append(dict_options)
 
@@ -280,6 +281,7 @@ class DBConnect(object):
     def add_option(self, obj_option):
         # 解析参数
         channel = obj_option['channel']
+        flag = obj_option['flag']
         product_id = obj_option['product_id']
         querstion_id = obj_option['querstion_id']
         querstion_name = obj_option['querstion_name']
@@ -288,10 +290,10 @@ class DBConnect(object):
         create_date = datetime.datetime.now()
         update_date = datetime.datetime.now()
 
-        SQL = "insert into t_bi_options(channel, product_id, querstion_id, querstion_name, answer_id, answer_name, create_date, update_date) values (%s, %s, %s, %s, %s, %s, %s, %s)"
+        SQL = "insert into t_bi_options(channel, flag, product_id, querstion_id, querstion_name, answer_id, answer_name, create_date, update_date) values (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
         # SQL参数
-        args = (channel, product_id, querstion_id, querstion_name, answer_id, answer_name, create_date, update_date)
+        args = (channel, flag, product_id, querstion_id, querstion_name, answer_id, answer_name, create_date, update_date)
 
         # 执行SQL
         res = self.cursor.execute(SQL, args)

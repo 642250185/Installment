@@ -1,0 +1,381 @@
+[
+  {
+    "id": 314,
+    "name": "购买渠道",
+    "type": 1,
+    "values": [
+      {
+        "id": 2014,
+        "name": "大陆国行",
+        "isPreferred": True,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2984,
+        "name": "国行官换机",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2015,
+        "name": "香港行货",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 3950,
+        "name": "国行展示机",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2794,
+        "name": "非国行港行-无锁",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2019,
+        "name": "非国行港行-有锁",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      }
+    ],
+    "illustration": {
+      "id": 467,
+      "content": "&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;在设置&amp;gt;通用&amp;gt;关于本机＞“型号”中，&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;“M...CH/”大陆国行；&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;“N...CH/”国行官换机；&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;“...ZP/”香港行货；&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;“3A...”“3C...”开头是展示机；&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;span style="font-family:Microsoft YaHei;"&gt;其余均为水货，能自由使用国内SIM卡为无锁，否则有锁。&lt;/span&gt; \n&lt;/p&gt;\n&lt;p&gt;\n\t&lt;br /&gt;\n&lt;/p&gt;",
+      "diagrams": None,
+    },
+  },
+  {
+    "id": 315,
+    "name": "存储容量",
+    "type": 1,
+    "values": [
+      {"id": 3987, "name": "256G", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2023, "name": "64G", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": {"id": 450, "content": "&lt;span style="font-family:Microsoft YaHei;"&gt;请点击“设置”&amp;gt;“关于本机”或者“存储容量”，查看“容量”一项。&lt;/span&gt;",
+      "diagrams": [
+        {
+          "id": 1051,
+          "fileUrl": "https://sr.aihuishou.com/image/590b1b74c8bb600000000031.png",
+        }
+      ],
+    },
+  },
+  {
+    "id": 316,
+    "name": "开机情况",
+    "type": 3,
+    "values": [
+      {"id": 2026, "name": "正常开机进入桌面", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 9630, "name": "开机密码无法解除", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2027, "name": "无法开机/自动重启/工程模式", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0007", "0003"], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 325,
+    "name": "通话功能",
+    "type": 2,
+    "values": [
+      {"id": 2045, "name": "通话正常", "isPreferred": True, "displayIcon": "inquiry-call", "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2047, "name": "通话功能不正常", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 332,
+    "name": "维修情况",
+    "type": 3,
+    "values": [
+      {"id": 2067, "name": "无维修情况", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2965, "name": "屏幕维修", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0004"], "value": None},
+      {"id": 2070, "name": "主板维修", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0005"], "value": None},
+      {"id": 2069, "name": "屏幕和主板均有维修", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0005"], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 333,
+    "name": "苹果保修期时长",
+    "type": 1,
+    "values": [
+      {"id": 2072, "name": "保修期剩余30天以上", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": ["0008"], "value": None},
+      {"id": 2075, "name": "过保/保修期不足30天", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0009"], "value": None}
+    ],
+    "illustration": {
+      "id": 444,
+      "content": "&lt;p&gt;\r\n\t&lt;span style=&quot;font-family:Microsoft YaHei;&quot;&gt;在 “设置”&amp;gt;“通用”&amp;gt;“关于本机”中寻找序列号或IMEI号，&lt;/span&gt;&lt;span style=&quot;font-family:&amp;quot;&quot;&gt;输入以下网址进行查询即可，&lt;/span&gt;\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n\t&lt;span style=&quot;font-family:Microsoft YaHei;&quot;&gt;&lt;a href=&quot;https://checkcoverage.apple.com/cn/zh&quot; target=&quot;_blank&quot;&gt;&lt;span style=&quot;color:#00D5FF;&quot;&gt;https://checkcoverage.apple.com/cn/zh&lt;/span&gt;&lt;/a&gt;（周日无法查询）&lt;/span&gt;&lt;/p&gt;\r\n&lt;p&gt;\r\n\t\r\n&lt;/p&gt;\r\n&lt;p&gt;\r\n\t\r\n&lt;/p&gt;",
+      "diagrams": [
+        {"id": 2197, "fileUrl": "https://sr.aihuishou.com/image/5902c2c0fe9db30000000009.png"},
+        {"id": 2198, "fileUrl": "https://sr.aihuishou.com/image/5902c2c6fe9db3000000000d.png"}
+      ],
+    },
+  },
+  {
+    "id": 343,
+    "name": "苹果id账号是否可退出",
+    "type": 3,
+    "values": [
+      {"id": 2100, "name": "苹果 id账号可退出", "isPreferred": True, "displayIcon": "inquiry-icloud", "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2101, "name": "苹果 id账号无法退出", "isPreferred": False, "displayIcon": "inquiry-icloud", "pricePropertyName": None, "tags": ["0007", "0003"], "value": None}
+    ],
+    "illustration": {
+      "id": 668,
+      "content": "&lt;span style="font-family:Microsoft YaHei;"&gt;iCloud是无法通过还原出厂设置来解除的。以防质检时需要询问您，或者影响回收价格，请您解除iCloud账户后再回收。&lt;/span&gt;",
+      "diagrams": [
+        {"id": 1692, "fileUrl": "https://sr.aihuishou.com/image/5a4ddcf4006a29881700000d.png"},
+        {"id": 1693, "fileUrl": "https://sr.aihuishou.com/image/5a4ddcf5bf4d72000000000d.png"},
+        {"id": 1694, "fileUrl": "https://sr.aihuishou.com/image/5a4ddcf8bf4d720000000011.png"}
+      ],
+    },
+  },
+  {
+    "id": 345,
+    "name": "拍摄功能",
+    "type": 2,
+    "values": [
+      {"id": 2104, "name": "拍照摄像正常", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2105, "name": "拍照模糊/有斑/功能异常", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 346,
+    "name": "充电功能 ",
+    "type": 2,
+    "values": [
+      {"id": 2106,
+        "name": "充电正常",
+        "isPreferred": True,
+        "displayIcon": "inquiry-charge",
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2107,
+        "name": "充电无反应/充电孔接触不良",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      }
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 347,
+    "name": "无线功能",
+    "type": 2,
+    "values": [
+      {
+        "id": 2108,
+        "name": "无线正常",
+        "isPreferred": True,
+        "displayIcon": "inquiry-wifi",
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2109,
+        "name": "无线无法打开/无法连接",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      }
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 350,
+    "name": "屏幕显示",
+    "type": 3,
+    "values": [
+      {"id": 2114, "name": "显示完美，无瑕疵", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2115, "name": "显示色差，或轻微泛黄/亮坏点", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 8565, "name": "显示烧屏，或有透图/透字", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2475, "name": "显示漏液，或闪烁/横竖线/花屏", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0004"], "value": None},
+      {"id": 3304, "name": "屏幕不显示，或无法显示图文", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0004"], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 351,
+    "name": "屏幕外观",
+    "type": 3,
+    "values": [
+      {"id": 2118,
+        "name": "屏幕完美无划痕",
+        "isPreferred": True,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2120,
+        "name": "屏幕有细微划痕",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 3098,
+        "name": "屏幕划伤，或边缘脱胶/有气泡",
+        "isPreferred": False,
+        "displayIcon": None,
+        pricePropertyName": None,
+        "tags": [],
+        "value": None,
+      },
+      {
+        "id": 2122,
+        "name": "屏幕碎裂，或边角破损",
+        "isPreferred": False,
+        "displayIcon": None,
+        "pricePropertyName": None,
+        "tags": ["0004"],
+        "value": None,
+      }
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 352,
+    "name": "边框背板",
+    "type": 3,
+    "values": [
+      {"id": 2124, "name": "全新包装未拆封", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2125, "name": "外壳完美无瑕疵", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2126, "name": "细微划痕，无磕碰", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2128, "name": "磕碰掉漆，或边框磨损", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 6873, "name": "外壳裂缝，或部件缺失/变形", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": ["0006"], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 353,
+    "name": "受潮状况 ",
+    "type": 2,
+    "values": [
+      {"id": 2129, "name": "机身无进水", "isPreferred": True, "displayIcon": "inquiry-bodywater", "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2130, "name": "机身进水或受潮", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 355,
+    "name": "机身是否弯曲",
+    "type": 2,
+    "values": [
+      {"id": 2134, "name": "机身无弯曲", "isPreferred": True, "displayIcon": "inquiry-bodydeformed", "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2135, "name": "机身弯曲", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}], "illustration": None},
+  {
+    "id": 456,
+    "name": "机身颜色",
+    "type": 1,
+    "values": [
+      {"id": 2453, "name": "白色", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2454, "name": "黑色", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 529,
+    "name": "指南针功能",
+    "type": 2,
+    "values": [
+      {"id": 2808, "name": "指南针功能正常", "isPreferred": True, "displayIcon": "inquiry-compass", "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 2809, "name": "指南针功能不正常", "isPreferred": False, "displayIcon": "inquiry-compass", "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 580,
+    "name": "触摸功能",
+    "type": 2,
+    "values": [
+      {"id": 3168, "name": "触摸功能正常", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 3169, "name": "触摸失灵/延迟", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 1135,
+    "name": "面容识别功能",
+    "type": 2,
+    "values": [
+      {"id": 5300, "name": "面容识别功能正常", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 5299, "name": "面容无法录入和识别", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 1228,
+    "name": "型号",
+    "type": 1,
+    "values": [
+      {"id": 6437, "name": "A1865-全网通", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 6438, "name": "其他", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 9543, "name": "A1903", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 1268,
+    "name": "屏幕传感器功能",
+    "type": 2,
+    "values": [
+      {"id": 6947, "name": "光线、距离感应正常", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 6948, "name": "光线/距离感应不正常", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 1269,
+    "name": "震动功能",
+    "type": 2,
+    "values": [
+      {"id": 6949, "name": "振动正常", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 6950, "name": "振动不正常", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  },
+  {
+    "id": 1279,
+    "name": "零件维修和更换情况",
+    "type": 2,
+    "values": [
+      {"id": 6982, "name": "电池/摄像头/外壳/尾插无更换", "isPreferred": True, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None},
+      {"id": 6985, "name": "更换过电池/摄像头/外壳/尾插", "isPreferred": False, "displayIcon": None, "pricePropertyName": None, "tags": [], "value": None}
+    ],
+    "illustration": None,
+  }
+]

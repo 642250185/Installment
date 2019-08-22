@@ -1,10 +1,11 @@
 import json
 import requests
 from spider.base import Base
+from spider import access_token
 
 class Price(Base):
 
-    def __get_quote_id(self, product_id, ppvIds):
+    def __get_quote_id(self, token, product_id, ppvIds):
 
         # 获取路由
         domain = self.cfg.get_cfg_value("ROUTE", "domain")
@@ -28,7 +29,7 @@ class Price(Base):
             "Content-Length": self.cfg.get_cfg_value("HEADERS", "Content-Length"),
             "Origin": self.cfg.get_cfg_value("HEADERS", "Origin"),
             "Cookie": self.cfg.get_cfg_value("HEADERS", "Cookie"),
-            "Authorization": self.cfg.get_cfg_value("HEADERS", "Authorization"),
+            "Authorization": "bearer " + token
         }
 
         # 请求体
@@ -75,8 +76,15 @@ class Price(Base):
         product_id = 25827
         ppvIds = [2014,3987,2072,2453,6437,2026,2067,2100,2114,2118,2124,2045,2104,2106,2108,2129,2134,2808,3168,5300,6947,6950,6982]
 
+        # 初始化token
+        cls_token = access_token.AccessToken()
+        dict_access_token = cls_token._get_token()
+
+        token = dict_access_token['token']
+
+
         for i in range(100):
-            self.__get_quote_id(product_id, ppvIds)
+            self.__get_quote_id(token, product_id, ppvIds)
 
         pass
 

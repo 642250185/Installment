@@ -1,6 +1,7 @@
 import json
 import requests
 from spider.base import Base
+from spider import access_token
 
 class Option(Base):
 
@@ -10,6 +11,7 @@ class Option(Base):
         for question in list:
             q_id = question['id']
             q_name = question['name']
+            q_type = question['type']
             answers = question['values']
             for answer in answers:
                 a_id = answer['id']
@@ -17,6 +19,7 @@ class Option(Base):
 
                 dict_option = {
                     "channel": self.channel,
+                    "flag": q_type,
                     "product_id": product_id,
                     "querstion_id": q_id,
                     "querstion_name": q_name,
@@ -31,7 +34,7 @@ class Option(Base):
 
         return list_spu_options
 
-    def __get_option(self, product):
+    def __get_option(self, token, product):
 
         product_id = product['product_id']
         product_name = product['product_name']
@@ -55,7 +58,7 @@ class Option(Base):
             "Referer": self.cfg.get_cfg_value("HEADERS", "Referer"),
             "Accept-Language": self.cfg.get_cfg_value("HEADERS", "Accept-Language"),
             "Cookie": self.cfg.get_cfg_value("HEADERS", "Cookie"),
-            "Authorization": self.cfg.get_cfg_value("HEADERS", "Authorization"),
+            "Authorization": "bearer " + token
         }
 
         try:
@@ -63,10 +66,9 @@ class Option(Base):
             # 判断该机型是否入options库
             options = self.db.get_optionbypid(self.channel, product_id)
             if len(options) > 0:
-                # TODO 执行检测逻辑，更新问题项
-                print('%s, 该机型详情已经入库, 无需再次发起请求。' % product_id)
+                print('已存在库中 >> 机型ID: %s, 机型名称: %s 跳过' % (product_id, product_name))
                 return
-
+            # 发起请求
             result = requests.get(url, headers=headers)
             result = json.loads(result.text)
 
@@ -80,6 +82,10 @@ class Option(Base):
 
                 # 过滤数据
                 list_spu_options = self.__analysis_options(product_id, properties)
+
+                if len(options) == len(list_spu_options):
+                    print('机型ID: %s, 机型名称: %s, 选项数量无变化: [%s, %s]' % (product_id, product_name, len(options), len(list_spu_options)))
+                    return
 
                 # 当全部过滤好该机型的数据之后再执行入库操作，
                 # 确保了采集该机型详情的完整性。
@@ -122,8 +128,14 @@ class Option(Base):
         all_products = self.db.get_allproducts(self.channel)
         print('SPU_Len: ', len(all_products))
 
+        # 初始化token
+        cls_token = access_token.AccessToken()
+        dict_access_token = cls_token._get_token()
+
+        token = dict_access_token['token']
+
         for product in all_products:
-            self.__get_option(product)
+            self.__get_option(token, product)
             pass
         pass
 

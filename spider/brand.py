@@ -13,7 +13,6 @@ class Brands(Base):
         dict_access_token = cls_token._get_token()
 
         token = dict_access_token['token']
-        expires = dict_access_token['expires']
 
         # 获取路由
         domain = self.cfg.get_cfg_value("ROUTE", "domain")
