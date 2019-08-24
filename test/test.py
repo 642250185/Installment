@@ -5,10 +5,10 @@ from spider import export
 from server import price
 from spider import access_token
 
-
-# cls_token = access_token.Token()
+# cls_token = access_token.AccessToken()
 # dict_token = cls_token._get_token()
 # print(dict_token)
+
 
 
 # class_brand = brand.Brands()

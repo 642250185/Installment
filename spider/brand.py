@@ -22,6 +22,8 @@ class Brands(Base):
         # 请求链接
         url = '{}/{}/{}'.format(domain, open_api, brand_url)
 
+        print(url)
+
         # 设置请求头
         headers = {
             "Host": self.cfg.get_cfg_value("HEADERS", "Host"),

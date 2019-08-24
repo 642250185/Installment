@@ -136,6 +136,7 @@ class Option(Base):
 
         for product in all_products:
             self.__get_option(token, product)
+            break
             pass
         pass
 

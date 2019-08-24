@@ -8,29 +8,30 @@ class Price(Base):
     def __get_quote_id(self, token, product_id, ppvIds):
 
         # 获取路由
-        domain = self.cfg.get_cfg_value("ROUTE", "domain")
-        open_api = self.cfg.get_cfg_value("ROUTE", "open_api_url")
+        domain = 'https://neon.aihuishou.com'
+        open_api = 'fenqile/fenqile-api'
 
         # 请求链接
         url = '{}/{}/{}'.format(domain, open_api, 'inquiry')
 
         # 设置请求头
         headers = {
-            "Host": self.cfg.get_cfg_value("HEADERS", "Host"),
-            "App-Slug": self.cfg.get_cfg_value("HEADERS", "App-Slug"),
-            "Accept-Encoding": self.cfg.get_cfg_value("HEADERS", "Accept-Encoding"),
-            "Connection": self.cfg.get_cfg_value("HEADERS", "Connection"),
-            "Accept": self.cfg.get_cfg_value("HEADERS", "Accept"),
-            "sid": self.cfg.get_cfg_value("HEADERS", "sid"),
-            "User-Agent": self.cfg.get_cfg_value("HEADERS", "User-Agent"),
+            "Host": "neon.aihuishou.com",
+            "App-Slug": "fenqile",
+            "Accept-Encoding": "br, gzip, deflate",
+            "Connection": "keep-alive",
+            "Accept": "application/json, text/plain, */*",
+            "sid": "b9945f23-af67-4e03-aa93-36dae56b9301",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;fenqile_ios_5.1.1;couldShowHeader_1;wv_i_v2",
             "Referer": "{}/fenqile/product/detail/{}".format(domain, product_id),
-            "Accept-Language": self.cfg.get_cfg_value("HEADERS", "Accept-Language"),
-            "Content-Type": self.cfg.get_cfg_value("HEADERS", "Content-Type"),
-            "Content-Length": self.cfg.get_cfg_value("HEADERS", "Content-Length"),
-            "Origin": self.cfg.get_cfg_value("HEADERS", "Origin"),
-            "Cookie": self.cfg.get_cfg_value("HEADERS", "Cookie"),
+            "Accept-Language": "zh-cn",
+            "Content-Type": "application/json;charset=UTF-8",
+            "Content-Length": "56",
+            "Origin": "https://neon.aihuishou.com",
             "Authorization": "bearer " + token
         }
+
+        print(type(product_id), type(ppvIds))
 
         # 请求体
         body = {
